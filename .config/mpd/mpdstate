@@ -1,0 +1,33 @@
+sw_volume: 72
+audio_device_state:1:pulse audio
+audio_device_state:1:FIFO
+state: pause
+current: 12
+time: 84.531000
+random: 1
+repeat: 0
+single: 0
+consume: 0
+crossfade: 0
+mixrampdb: 0.000000
+mixrampdelay: -1.000000
+playlist_begin
+0:Lapiz Conciente - Latidos/Lapiz-Conciente-–-Calle.mp3
+1:Lapiz Conciente - Latidos/Lapiz-Conciente-–-Sueño-Contigo.mp3
+2:Lapiz Conciente - Latidos/Lapiz-Conciente-–-Tá-En-El-Limit.mp3
+3:Lapiz Conciente - Latidos/Lapiz-Conciente-–-Tiempos.mp3
+4:Kendo Kaponi - Kendo Edition (2016)/Kendo-Kaponi-Con-Quien-Estas.mp3
+5:Lapiz Conciente - Latidos/Lapiz-Conciente-ft-Belinda-–-Intimidad.mp3
+6:Lapiz Conciente - Latidos/Lapiz-Conciente-ft-Black-Point-–-Llena-de-Maldad.mp3
+7:Lapiz Conciente - Latidos/Lapiz-Conciente-ft-J-Alvarez-–-Mi-Forma-De-Ser.mp3
+8:Lapiz Conciente - Latidos/Lapiz-Conciente-ft-Musicologo-The-Libro-–-Pregunto-Por-Ti.mp3
+9:Lapiz Conciente - Latidos/Lapiz-Conciente-ft-Natti-Natasha-–-Tu-Magia.mp3
+10:Lapiz Conciente - Latidos/Lapiz-Conciente-ft-Vicente-Garcia-–-Fuerza-De-Mujer.mp3
+11:Lapiz Conciente - Latidos/Lapiz-Conciente-ft-Vico-C-–-Papa.mp3
+12:Kendo Kaponi - Kendo Edition (2016)/El-Dinero-No-Lo-Es-Todo.mp3
+13:Kendo Kaponi - Kendo Edition (2016)/Kendo-Kaponi-Ft-Cosculluela-Criminal.mp3
+14:Kendo Kaponi - Kendo Edition (2016)/Kendo-Kaponi-Ft-Nejo-No-Te-Enamores.mp3
+15:Kendo Kaponi - Kendo Edition (2016)/Kendo-Kaponi-Ft-Farruko-Pa-Allá-Pa.mp3
+16:Romeo Santos-Utopia (Album) (2019)/01-Romeo-Santos-Intro-Soy-Dominicano.mp3
+17:Romeo Santos-Utopia (Album) (2019)/02-Romeo-Santos-El-Chaval-de-la-Bachata-Canalla.mp3
+playlist_end

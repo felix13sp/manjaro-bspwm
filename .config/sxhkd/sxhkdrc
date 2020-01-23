@@ -1,0 +1,122 @@
+########################################
+## Lanzar Terminal
+########################################
+super + Return
+	urxvt
+
+	
+########################################
+## Dibujar Terminal
+########################################
+super + shift + Return
+	/home/fz/.config/.scripts/urdraw
+
+	
+########################################
+## Lanzar menu Rofi 
+########################################
+super + d
+	rofi -show run
+
+
+########################################
+## Lanzar aplicaciones comunes
+########################################
+super + shift + {t,f,g}
+	{thunar,firefox,geany}
+
+
+########################################	
+## Captura de pantalla
+########################################
+Print
+	scrot -e 'mv $f ~/Imágenes'
+
+
+########################################
+##Captura del area seleccionada
+########################################
+Print + alt
+
+	scrot -s -e 'mv $f ~/Imágenes'
+
+	
+########################################
+## Mostrar que esta sonando
+########################################
+super + m
+	notify-send "Reproduciendo ♫" "$(mpc current)"
+
+
+########################################
+## Cerrar seccion en bspwm
+########################################
+super + control + Escape
+	killall vanela; bspc quit
+	
+	
+########################################
+# Recargar bspwm 
+########################################
+super + shift + BackSpace
+	killall vanela; bspwmrc
+
+
+########################################
+## Cerrar aplicacion
+########################################
+super + {_,shift + }w
+	bspc node {-c,-k}
+
+
+########################################
+## Pantalla completa / Normal
+########################################
+super + f
+	bspc desktop -l next
+	
+	
+########################################	
+## Split horizontal, split vertical, or cancel
+super + {h,v,r}
+	bspc node -p {east,south,cancel}
+
+## Toggle beetwen floating & tiled
+super + space
+    bspc node -t "~"{floating,tiled}
+
+## Pseudo Tiled & tiled mode
+super + {p,t}
+    bspc node -t {pseudo_tiled,tiled}
+
+## Send the window to another edge of the screen
+super + {_,shift + }{Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+
+## Change focus to next window, including floating window
+alt + {_,shift + }Tab
+	bspc node -f {next.local,prev.local}
+
+## Switch workspace
+ctrl + alt + {Left,Right}
+	bspc desktop -f {prev.local,next.local}
+
+## Switch to last opened workspace
+super + {Tab,grave}
+	bspc {node,desktop} -f last
+
+## Send focused window to another workspace
+super + {_,shift + }{1-6}
+	bspc {desktop -f,node -d} '^{1-6}'
+
+## Expanding windows
+super + control + {Left,Right,Up,Down}
+	bspc node -z {left -20 0,right 20 0,top 0 -20,bottom 0 20}
+	
+## Shrinking windows
+super + alt + {Left,Right,Up,Down}
+	bspc node -z {left 20 0,right -20 0,top 0 20,bottom 0 -20}
+	
+## Move floating windows
+alt + shift + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}

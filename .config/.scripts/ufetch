@@ -1,0 +1,74 @@
+
+#!/bin/bash
+
+# Ufetch 
+# Alternativa a screenfetch
+# Codigo original en https://github.com/jschx/ufetch
+# Modificado un poquito por mi
+# Disfrute! Pharaoh (fz)
+
+###################################################
+## Obtener informacion del Sistema
+###################################################
+user="${USER}@$(hostname)"
+os='Manjaro Bspwm Edition'
+kernel="$(uname -sr)"
+uptime="$(uptime -p | sed 's/up //')"
+packages="$(pacman -Q | wc -l)"
+shell="$(basename ${SHELL})"
+pidof systemd && init="systemd" || init="Not systemd"
+
+if [ -z "${WM}" ]; then
+	if [ "${XDG_CURRENT_DESKTOP}" ]; then
+		envtype='DE'
+		WM="${XDG_CURRENT_DESKTOP}"
+	elif [ "${DESKTOP_SESSION}" ]; then
+		envtype='DE'
+		WM="${DESKTOP_SESSION}"
+	else
+		envtype='WM'
+		WM="$(tail -n 1 "${HOME}/.xinitrc" | cut -d ' ' -f 2)"
+	fi
+else
+	envtype='WM'
+fi
+
+###################################################
+## Definir Colores
+###################################################
+bold="$(tput bold)"
+black="$(tput setaf 0)"
+red="$(tput setaf 1)"
+green="$(tput setaf 2)"
+yellow="$(tput setaf 3)"
+blue="$(tput setaf 4)"
+magenta="$(tput setaf 5)"
+cyan="$(tput setaf 6)"
+white="$(tput setaf 7)"
+reset="$(tput sgr0)"
+
+###################################################
+# Aca se pueden cambiar los colores para cada zona
+###################################################
+lc="${reset}${bold}${green}"	# labels
+nc="${reset}${bold}${green}"	# user and hostname
+ic="${reset}"			# info
+c0="${reset}${bold}${red}"	# first color
+c1="${reset}${green}"		# second color
+
+###################################################
+## Imprimimos la salida
+###################################################
+cat <<EOF         
+${c0}	:::::::::: ::::::::: 	${lc}USER:         ${ic}${user}${reset}
+${c0}	:+:             :+:  	${lc}KERNEL:       ${ic}${kernel}${reset}
+${c0}	+:+            +:+   	${lc}INIT:         ${ic}${init}${reset}
+${c0}	:#::+::#      +#+    	${lc}UPTIME:       ${ic}${uptime}${reset}
+${c0}	+#+          +#+     	${lc}PACKAGES:     ${ic}${packages}${reset}
+${c0}	#+#         #+#      	${lc}SHELL:        ${ic}${shell}${reset}
+${c0}	###        ######### 	${lc}${envtype}:           ${ic}${WM}${reset}
+
+EOF
+
+
+
